@@ -1,23 +1,29 @@
 package com.vehicle.demo.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vehicle.demo.model.Vehicle;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
 public class VehicleRequest {
 
     private Long id;
 
+    @JsonProperty("marca")
     private String brand;
 
+    @JsonProperty("modelo")
     private String model;
 
-    private String vehicleRegistration;
+    @JsonProperty("matricula")
+    private String licensePlate;
 
+    @JsonProperty("color")
     private String color;
 
+    @JsonProperty("año")
     private Integer year;
 
     public Vehicle toDomain() {
@@ -25,7 +31,7 @@ public class VehicleRequest {
                 .id(id)
                 .brand(brand)
                 .model(model)
-                .vehicleRegistration(vehicleRegistration)
+                .licensePlate(licensePlate)
                 .color(color)
                 .year(year)
                 .build();

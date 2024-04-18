@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
 
-    Page<Vehicle> findByBrandContainingOrModelContainingOrVehicleRegistrationContaining(String brand, String model, String vehicleRegistration, Pageable pageable);
+    Page<Vehicle> findByBrandContainingOrModelContainingOrLicensePlateContainingOrderByIdDesc(String brand, String model, String vehicleRegistration, Pageable pageable);
 
 }

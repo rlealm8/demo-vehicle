@@ -29,7 +29,7 @@ public class Vehicle {
 
     private String model;
 
-    private String vehicleRegistration;
+    private String licensePlate;
 
     private String color;
 

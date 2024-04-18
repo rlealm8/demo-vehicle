@@ -1,5 +1,6 @@
 package com.vehicle.demo.service;
 
+import com.vehicle.demo.model.Vehicle;
 import com.vehicle.demo.model.dto.VehicleRequest;
 import com.vehicle.demo.model.dto.VehicleResponse;
 import org.springframework.data.domain.Page;
@@ -10,7 +11,7 @@ public interface IVehicleService {
     
     VehicleResponse save(VehicleRequest vehicleRequest);
 
-    VehicleResponse find(Long vehicleId);
+    Vehicle find(Long vehicleId);
 
     Page<VehicleResponse> findList(String brand, String model, String vehicleRegistration, Pageable pageable);
 

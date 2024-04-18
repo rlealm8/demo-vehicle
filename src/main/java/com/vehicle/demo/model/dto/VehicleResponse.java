@@ -9,6 +9,8 @@ import lombok.Value;
 @Builder
 public class VehicleResponse {
 
+    private Long id;
+
     @JsonProperty("marca")
     private String brand;
 
@@ -16,7 +18,7 @@ public class VehicleResponse {
     private String model;
 
     @JsonProperty("matricula")
-    private String vehicleRegistration;
+    private String licensePlate;
 
     @JsonProperty("color")
     private String color;
@@ -26,9 +28,10 @@ public class VehicleResponse {
 
     public static VehicleResponse of(Vehicle vehicle) {
         return VehicleResponse.builder()
+                .id(vehicle.getId())
                 .brand(vehicle.getBrand())
                 .model(vehicle.getModel())
-                .vehicleRegistration(vehicle.getVehicleRegistration())
+                .licensePlate(vehicle.getLicensePlate())
                 .color(vehicle.getColor())
                 .year(vehicle.getYear())
                 .build();

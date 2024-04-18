@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"marca\": \"Chevrolet\",\r\n    \"modelo\": \"Spark\",\r\n    \"matricula\": \"AS258F\",\r\n    \"color\": \"Gris\",\r\n    \"año\": 2011\r\n}",
+					"raw": "{\r\n    \"marca\": \"Chevrolet\",\r\n    \"modelo\": \"Aveo\",\r\n    \"matricula\": \"BL789OP\",\r\n    \"color\": \"Gris\",\r\n    \"año\": 2011\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Chevrolet\",\r\n    \"modelo\": \"Spark\",\r\n    \"color\": \"Azul\"\r\n}",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"marca\": \"Chevrolet\",\r\n    \"modelo\": \"Spark\",\r\n    \"matricula\": \"BL789OP\",\r\n    \"color\": \"Azul\",\r\n    \"año\": 2011\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

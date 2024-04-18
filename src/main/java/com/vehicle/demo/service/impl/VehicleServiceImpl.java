@@ -40,9 +40,15 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public Page<VehicleResponse> findList(String brand, String model, String vehicleRegistration, Pageable pageable) {
-        //Metodo para obtener el listado de vehiculos paginado y en orden
+        //Metodo para obtener el listado de vehiculos segun parametros marca, modelo y matricula paginado y en orden
         return vehicleRepository.findByBrandContainingOrModelContainingOrLicensePlateContainingOrderByIdDesc(brand, model,
                 vehicleRegistration, pageable).map(entity -> VehicleResponse.of(entity));
+    }
+
+    @Override
+    public Page<VehicleResponse> findAllList(Pageable pageable) {
+        //Metodo para obtener el listado de vehiculos paginado y en orden
+        return vehicleRepository.findAllByOrderByIdDesc(pageable).map(entity -> VehicleResponse.of(entity));
     }
 
     @Override

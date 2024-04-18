@@ -11,4 +11,6 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
 
     Page<Vehicle> findByBrandContainingOrModelContainingOrLicensePlateContainingOrderByIdDesc(String brand, String model, String vehicleRegistration, Pageable pageable);
 
+    Page<Vehicle> findAllByOrderByIdDesc(Pageable pageable);
+
 }

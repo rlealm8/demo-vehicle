@@ -15,6 +15,8 @@ public interface IVehicleService {
 
     Page<VehicleResponse> findList(String brand, String model, String vehicleRegistration, Pageable pageable);
 
+    Page<VehicleResponse> findAllList(Pageable pageable);
+
     void delete(Long vehicleId);
     
 }

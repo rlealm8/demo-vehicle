@@ -22,7 +22,9 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponse save(VehicleRequest vehicleRequest) {
+        //Metodo para guardar y actualizar vehiculos
         if(Objects.nonNull(vehicleRequest.getId())){
+            //Bifurcacion solo para actualizar vehiculo
             Vehicle vehicle = find(vehicleRequest.getId());
             BeanUtils.copyProperties(vehicle, vehicleRequest);
             return VehicleResponse.of(vehicleRepository.save(vehicleRequest.toDomain()));
@@ -32,17 +34,20 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public Vehicle find(Long vehicleId) {
+        //Metodo para consultar vehiculo por ID
         return vehicleRepository.findById(vehicleId).get();
     }
 
     @Override
     public Page<VehicleResponse> findList(String brand, String model, String vehicleRegistration, Pageable pageable) {
+        //Metodo para obtener el listado de vehiculos paginado y en orden
         return vehicleRepository.findByBrandContainingOrModelContainingOrLicensePlateContainingOrderByIdDesc(brand, model,
                 vehicleRegistration, pageable).map(entity -> VehicleResponse.of(entity));
     }
 
     @Override
     public void delete(Long vehicleId) {
+        //Metodo para eliminar vehiculo por ID
         vehicleRepository.deleteById(vehicleId);
     }
 
